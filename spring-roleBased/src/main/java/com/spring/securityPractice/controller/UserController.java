@@ -65,42 +65,4 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
     }
-
-//    @PostMapping("/registration")
-//    public ResponseEntity<?> register(@RequestBody UserDto userDto) {
-//        try {
-//            UserDto createdUser = userService.createUser(userDto);
-//            String accessToken = JWTUtils.generateToken(createdUser.getEmail());
-//            Map<String, Object> response = new HashMap<>();
-//            response.put("message", "Sign up Successful!!");
-//            response.put("user", createdUser);
-//            response.put("accessToken", AppConstants.TOKEN_PREFIX + accessToken);
-//            return ResponseEntity.status(HttpStatus.CREATED).body(response);
-//        } catch (Exception e) {
-//            Map<String, String> errorResponse = new HashMap<>();
-//            errorResponse.put("error", e.getMessage());
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-//        }
-//    }
-
-//    @PostMapping("/signup/admin")
-//    public ResponseEntity<?> registerAdmin(@RequestBody UserDto userDto) {
-//        try {
-//            UserDto createdAdmin = userService.createAdmin(userDto);
-//            String accessToken = JWTUtils.generateToken(createdAdmin.getEmail(),"admin");
-//
-//            Map<String, Object> response = new HashMap<>();
-//            response.put("message", "Admin Sign-up Successful!!");
-//            response.put("admin", createdAdmin);
-//            response.put("accessToken", AppConstants.TOKEN_PREFIX + accessToken);
-//
-//            return ResponseEntity.status(HttpStatus.CREATED).body(response);
-//        } catch (Exception e) {
-//            Map<String, String> errorResponse = new HashMap<>();
-//            errorResponse.put("error", e.getMessage());
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-//        }
-//    }
-
-
 }

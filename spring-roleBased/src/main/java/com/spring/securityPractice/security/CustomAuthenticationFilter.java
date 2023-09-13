@@ -36,7 +36,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException {
         try {
-            UserLoginRequestModel creds = new ObjectMapper().readValue(request.getInputStream(), UserLoginRequestModel.class);
+            UserLoginRequestModel creds = new ObjectMapper().readValue(request.getInputStream(),
+                    UserLoginRequestModel.class);
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             creds.getEmail(),
@@ -50,7 +51,9 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
 
     @Override
-    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
+                                            FilterChain chain, Authentication authResult)
+            throws IOException, ServletException {
         String user = ((User) authResult.getPrincipal()).getUsername();
         String accessToken = JWTUtils.generateToken(user);
         UserService userService = (UserService) SpringApplicationContext.getBean("userServiceImpl");

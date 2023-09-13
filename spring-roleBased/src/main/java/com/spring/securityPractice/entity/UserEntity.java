@@ -20,17 +20,4 @@ public class UserEntity {
     private String email;
     private String password;
     private String role;
-
-//    @ElementCollection(fetch = FetchType.EAGER)
-//    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
-//    @Column(name = "role")
-//    private Set<String> roles;
-//
-//    public void setRoles(Set<String> roles) {
-//        this.roles = roles;
-//    }
-//
-//    public Set<String> getRoles() {
-//        return this.roles;
-//    }
 }

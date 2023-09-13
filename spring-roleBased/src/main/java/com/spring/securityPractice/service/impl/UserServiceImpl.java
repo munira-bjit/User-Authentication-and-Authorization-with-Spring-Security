@@ -80,21 +80,4 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 true,true,true,true,
                 new ArrayList<>());
     }
-
-//
-//    @Override
-//    public UserDto createAdmin(UserDto userDto) throws Exception {
-//        ModelMapper modelMapper = new ModelMapper();
-//        if(userRepository.findByEmail(userDto.getEmail()).isPresent())
-//            throw new Exception("Admin already exists!");
-//        UserEntity userEntity = new UserEntity();
-//        userEntity.setEmail(userDto.getEmail());
-//        userEntity.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
-//        String publicUserId = JWTUtils.generateUserID(10);
-//        userEntity.setRoles(Collections.singleton("ROLE_ADMIN"));
-//
-//        UserEntity storedAdminDetails = userRepository.save(userEntity);
-//        UserDto returnedValue = modelMapper.map(storedAdminDetails, UserDto.class);
-//        return returnedValue;
-//    }
 }

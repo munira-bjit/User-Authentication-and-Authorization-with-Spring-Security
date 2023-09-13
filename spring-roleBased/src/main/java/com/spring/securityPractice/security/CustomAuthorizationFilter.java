@@ -37,12 +37,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
             }
             filterChain.doFilter(request, response);
         }
-
-//        else {
-//            UsernamePasswordAuthenticationToken authenticationToken = getAuthenticationToken(header);
-//            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-//            filterChain.doFilter(request, response);
-//        }
     }
 
     private Authentication getAuthenticationToken(String header) {
@@ -61,18 +55,4 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
         }
         return null;
     }
-
-//    private UsernamePasswordAuthenticationToken getAuthenticationToken(String header) {
-//        if (header != null) {
-//            String token = header.replace(AppConstants.TOKEN_PREFIX, "");
-//            String user = JWTUtils.hasTokenExpired(token) ? null : JWTUtils.extractUser(token);
-////            if (user != null) return new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
-////            return null;
-//
-//            if (user != null) {
-//
-//            }
-//        }
-//        return null;
-//    }
 }
